@@ -109,6 +109,6 @@ Homepage
 
 ## 📸 Screenshots
 ![Homepage](images/screenshots/homepage.png)
-![Product Page](images/screenshots/catalogue.png)
+![Catalogue Page](images/screenshots/catalogue.png)
 ![Checkout Page](images/screenshots/checkout.png)
 > 
