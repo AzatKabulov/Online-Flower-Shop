@@ -71,6 +71,10 @@ Online-Flower-Shop/
 │   └── contact.js                # Contact page
 │
 ├── images/                       # All image assets
+│   └── screenshots/              # README preview screenshots
+│       ├── homepage.png
+│       ├── catalogue.png
+│       └── product.png
 │
 └── pages/                        # All pages except homepage
     ├── blueiris.html
