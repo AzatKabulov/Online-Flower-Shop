@@ -1,0 +1,43 @@
+/* fourflowercategories.css — occasion category pages */
+@import url('base.css');
+
+.cat-wrap {
+  max-width: var(--max-w); margin: 0 auto;
+  padding: calc(var(--nav-h) + 2rem) 1.5rem 2rem;
+}
+.cat-wrap h1 {
+  font-family: var(--font-d); font-size: clamp(1.8rem,4vw,2.6rem);
+  font-weight: 600; color: var(--text);
+  text-align: center; margin-bottom: 2rem;
+}
+
+.cat-grid {
+  display: grid; grid-template-columns: repeat(auto-fill,minmax(260px,1fr)); gap: 1.5rem;
+}
+
+.cat-card {
+  background: var(--surface); border-radius: var(--radius);
+  overflow: hidden; backdrop-filter: blur(6px);
+  transition: transform var(--ease), box-shadow var(--ease);
+}
+.cat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+
+.cat-card-img { aspect-ratio: 1/1; overflow: hidden; }
+.cat-card-img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .4s ease;
+}
+.cat-card:hover .cat-card-img img { transform: scale(1.05); }
+
+.cat-card-info { padding: 1rem; }
+.cat-card-info h2 {
+  font-family: var(--font-d); font-size: 1.2rem; font-weight: 600;
+  margin-bottom: .35rem;
+}
+.cat-card-info h2 a { text-decoration: none; color: var(--text); transition: color var(--ease); }
+.cat-card-info h2 a:hover { color: var(--accent); }
+.cat-price { color: var(--accent); font-weight: 500; font-size: .95rem; }
+
+@media (max-width:500px) {
+  .cat-grid { grid-template-columns: 1fr 1fr; }
+}

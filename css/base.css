@@ -1,0 +1,211 @@
+/* ============================================================
+   XX FLOWER SHOP — base.css
+   Shared design system. Imported by every page stylesheet.
+   Fonts: Cormorant Garamond (display) + Jost (body)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+/* --- Tokens --- */
+:root {
+  --bg:          #fdf9f5;
+  --surface:     rgba(255,255,255,0.88);
+  --accent:      #c4704a;
+  --accent-dk:   #a85a36;
+  --accent-lt:   #f0c9b0;
+  --text:        #2c2218;
+  --muted:       #7a6a5e;
+  --nav-bg:      rgba(28,18,10,0.92);
+  --border:      #e8ddd4;
+  --radius:      10px;
+  --shadow:      0 4px 24px rgba(0,0,0,0.09);
+  --max-w:       1200px;
+  --nav-h:       72px;
+  --font-d:      'Cormorant Garamond', Georgia, serif;
+  --font-b:      'Jost', sans-serif;
+  --ease:        0.22s ease;
+}
+
+/* --- Body --- */
+body {
+  font-family: var(--font-b);
+  background-color: var(--bg);
+  background-image: url('../images/background.webp');
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main { flex: 1; }
+
+/* --- Accessibility --- */
+.sr-only {
+  position: absolute; width:1px; height:1px;
+  padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* ============================================================
+   HEADER / NAV  (identical on every page)
+   ============================================================ */
+header {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  height: var(--nav-h);
+}
+header nav {
+  display: flex; align-items: center; gap: 1rem;
+  max-width: var(--max-w); margin: 0 auto;
+  padding: 0 1.5rem; height: 100%;
+}
+.logo { width: 46px; height: auto; border-radius: 4px; }
+
+/* Search */
+.search-bar { display:flex; align-items:center; gap:.5rem; flex:1; }
+.search-bar input {
+  flex:1; padding:.5rem 1rem;
+  border:1px solid rgba(255,255,255,.15); border-radius:30px;
+  background: rgba(255,255,255,.1); color:#fff;
+  font-family: var(--font-b); font-size:.88rem;
+  outline:none; transition: background var(--ease), box-shadow var(--ease);
+}
+.search-bar input::placeholder { color:rgba(255,255,255,.45); }
+.search-bar input:focus {
+  background:rgba(255,255,255,.18);
+  box-shadow:0 0 0 2px var(--accent-lt);
+}
+.search-bar button {
+  flex-shrink:0;
+  background:var(--accent); color:#fff; border:none;
+  border-radius:30px; padding:.48rem 1.1rem;
+  font-family:var(--font-b); font-size:.85rem; font-weight:500;
+  cursor:pointer; transition:background var(--ease);
+}
+.search-bar button:hover { background:var(--accent-dk); }
+
+/* Dropdown */
+.dropdown { position:relative; }
+.dropbtn {
+  background:transparent;
+  border:1.5px solid rgba(255,255,255,.3);
+  color:#fff; border-radius:30px;
+  padding:.48rem 1.1rem;
+  font-family:var(--font-b); font-size:.85rem; font-weight:500;
+  cursor:pointer; white-space:nowrap;
+  display:flex; align-items:center; gap:.35rem;
+  transition:border-color var(--ease), background var(--ease);
+}
+.dropbtn:hover { border-color:var(--accent-lt); background:rgba(255,255,255,.07); }
+.dropbtn .arrow { font-size:.7rem; transition:transform var(--ease); }
+.dropdown:hover .arrow,
+.dropdown:focus-within .arrow { transform:rotate(180deg); }
+
+.dropdown-content {
+  display:none; position:absolute; right:0; top:calc(100% + 8px);
+  background:#fff; border-radius:var(--radius);
+  box-shadow:var(--shadow); min-width:200px;
+  list-style:none; overflow:hidden; z-index:200;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content { display:block; }
+.dropdown-content a {
+  display:block; padding:.65rem 1.1rem;
+  color:var(--text); text-decoration:none; font-size:.88rem;
+  transition:background var(--ease), color var(--ease);
+}
+.dropdown-content a:hover { background:var(--bg); color:var(--accent); }
+
+/* ============================================================
+   FOOTER  (identical on every page)
+   ============================================================ */
+footer {
+  background:var(--nav-bg); color:rgba(255,255,255,.7);
+  padding:1.1rem 1.5rem; margin-top:auto;
+}
+.footer-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:.75rem;
+  max-width:var(--max-w); margin:0 auto;
+}
+footer nav { display:flex; gap:1.25rem; }
+footer nav a {
+  color:rgba(255,255,255,.65); text-decoration:none; font-size:.85rem;
+  transition:color var(--ease);
+}
+footer nav a:hover { color:#fff; }
+footer p { font-size:.78rem; color:rgba(255,255,255,.4); text-align:center; flex:1; }
+.footer-signup {
+  background:var(--accent); color:#fff; border:none;
+  border-radius:30px; padding:.45rem 1rem;
+  font-family:var(--font-b); font-size:.82rem; font-weight:500;
+  cursor:pointer; text-decoration:none; white-space:nowrap;
+  transition:background var(--ease);
+}
+.footer-signup:hover { background:var(--accent-dk); }
+
+/* ============================================================
+   SHARED COMPONENTS
+   ============================================================ */
+
+/* Page wrapper (used on every page except homepage) */
+.page-wrap {
+  max-width:var(--max-w); margin:0 auto;
+  padding: calc(var(--nav-h) + 2rem) 1.5rem 2rem;
+  width:100%;
+}
+
+/* Section card */
+.card {
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:2rem;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+
+/* Buttons */
+.btn {
+  display:inline-block; border:none; border-radius:30px;
+  padding:.55rem 1.4rem; cursor:pointer; text-decoration:none;
+  font-family:var(--font-b); font-size:.9rem; font-weight:500;
+  transition:background var(--ease), transform var(--ease), color var(--ease);
+}
+.btn-primary { background:var(--accent); color:#fff; }
+.btn-primary:hover { background:var(--accent-dk); transform:translateY(-1px); }
+.btn-outline {
+  background:transparent; color:var(--accent);
+  border:1.5px solid var(--accent);
+}
+.btn-outline:hover { background:var(--accent); color:#fff; }
+.btn-ghost {
+  background:rgba(255,255,255,.12); color:#fff;
+  border:1.5px solid rgba(255,255,255,.35);
+}
+.btn-ghost:hover { background:rgba(255,255,255,.22); }
+
+/* Page heading style */
+.page-title {
+  font-family:var(--font-d); font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:600; color:var(--text); margin-bottom:1.5rem;
+  text-align:center;
+}
+
+/* ============================================================
+   RESPONSIVE NAV
+   ============================================================ */
+@media (max-width:700px) {
+  header nav { flex-wrap:wrap; padding:.6rem 1rem; height:auto; }
+  header { height:auto; }
+  .search-bar { order:3; flex-basis:100%; margin-bottom:.4rem; }
+  .page-wrap { padding-top: 130px; }
+}

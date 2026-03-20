@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XX Flower Shop — Fresh Bouquets & Arrangements</title>
+  <meta name="description" content="Shop fresh, hand-crafted flower bouquets for every occasion. Birthday, Valentine's Day, Mother's Day and more.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-label="XX Flower Shop — Home">
+        <img src="images/logo.webp" alt="XX Flower Shop" class="logo">
+      </a>
+      <div class="search-bar" role="search">
+        <input type="text" id="searchInput" placeholder="Search flowers..." aria-label="Search flowers" autocomplete="off">
+        <button onclick="handleSearch()">Search</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" aria-expanded="false" aria-controls="cat-menu">
+          Flower Catalogue <span class="arrow" aria-hidden="true">▾</span>
+        </button>
+        <ul class="dropdown-content" id="cat-menu" role="menu">
+          <li><a href="pages/fathersdayflower.html" role="menuitem">Father's Day</a></li>
+          <li><a href="pages/mothersdayflower.html" role="menuitem">Mother's Day</a></li>
+          <li><a href="pages/valentinesdayflower.html" role="menuitem">Valentine's Day</a></li>
+          <li><a href="pages/birthdayflower.html" role="menuitem">Birthday</a></li>
+          <li><a href="pages/teachersdayflower.html" role="menuitem">Teacher's Day</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- INTRO -->
+    <section class="introduction" aria-labelledby="intro-heading">
+      <h1 id="intro-heading">Welcome to XX Flower Shop</h1>
+      <p>
+        At XX Flower Shop, we believe every bouquet tells a story. We source the freshest
+        flowers from local and international growers to create stunning, personalised
+        arrangements for every occasion.
+        <span id="more">
+          Whether it's a romantic gesture, a heartfelt thank-you, or simply brightening
+          up a room — our experienced florists craft each bouquet with care and creativity.
+          We deliver nationwide across Malaysia with same-day options available.
+        </span>
+      </p>
+      <button id="readMoreBtn" class="btn btn-outline" aria-expanded="false">Read more</button>
+    </section>
+
+    <!-- BEST SELLERS -->
+    <section class="best-sellers" aria-labelledby="bs-heading">
+      <h2 id="bs-heading">Best Sellers</h2>
+      <div class="flower-grid">
+
+        <article class="flower-card">
+          <a href="pages/blueiris.html" tabindex="-1" aria-hidden="true">
+            <div class="card-img-wrap">
+              <img src="images/blue-iris-1.jpg" data-hover="images/blue-iris-hover.jpg" alt="Blue iris bouquet" loading="lazy">
+            </div>
+          </a>
+          <div class="card-info">
+            <h3><a href="pages/blueiris.html">Blue Iris Bouquet</a></h3>
+            <p class="price"><span class="price-main">RM89.00</span><span class="price-note">/ std · hover for premium</span></p>
+          </div>
+        </article>
+
+        <article class="flower-card">
+          <a href="pages/pinkcarnation.html" tabindex="-1" aria-hidden="true">
+            <div class="card-img-wrap">
+              <img src="images/pink-carnation-1.webp" data-hover="images/pink-carnation-hover.jpg" alt="Pink carnation bouquet" loading="lazy">
+            </div>
+          </a>
+          <div class="card-info">
+            <h3><a href="pages/pinkcarnation.html">Pink Carnations</a></h3>
+            <p class="price"><span class="price-main">RM99.00</span><span class="price-note">/ std · hover for premium</span></p>
+          </div>
+        </article>
+
+        <article class="flower-card">
+          <a href="pages/redroses.html" tabindex="-1" aria-hidden="true">
+            <div class="card-img-wrap">
+              <img src="images/red-roses-1.webp" data-hover="images/red-roses-hover.webp" alt="Red rose bouquet" loading="lazy">
+            </div>
+          </a>
+          <div class="card-info">
+            <h3><a href="pages/redroses.html">Red Rose Bouquet</a></h3>
+            <p class="price"><span class="price-main">RM109.00</span><span class="price-note">/ std · hover for premium</span></p>
+          </div>
+        </article>
+
+        <article class="flower-card">
+          <a href="pages/pinklilies.html" tabindex="-1" aria-hidden="true">
+            <div class="card-img-wrap">
+              <img src="images/pink-lily-1.webp" data-hover="images/pink-lily-hover.webp" alt="Pink lily bouquet" loading="lazy">
+            </div>
+          </a>
+          <div class="card-info">
+            <h3><a href="pages/pinklilies.html">Pink Lily Bouquet</a></h3>
+            <p class="price"><span class="price-main">RM129.00</span><span class="price-note">/ std · hover for premium</span></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ADDITIONAL INFO -->
+    <section class="additional-info" aria-label="Shop info">
+
+      <div class="info-box">
+        <h2>Find Us</h2>
+        <img src="images/map.png" alt="Map showing our shop location" class="map-img" loading="lazy">
+      </div>
+
+      <div class="info-box">
+        <h2>Customer Reviews</h2>
+        <div class="review-carousel" aria-live="polite" aria-atomic="true">
+          <blockquote class="review active">
+            <p>"Beautiful arrangements for every occasion."</p>
+            <footer>— John Smith</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>"Fresh flowers and timely delivery!"</p>
+            <footer>— Jane Doe</footer>
+          </blockquote>
+          <blockquote class="review">
+            <p>"Excellent customer service and stunning bouquets."</p>
+            <footer>— Sarah Lee</footer>
+          </blockquote>
+        </div>
+        <div class="review-dots" aria-hidden="true">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <h2>Leave Feedback</h2>
+        <form id="feedbackForm" novalidate>
+          <label for="feedbackText" class="sr-only">Your feedback</label>
+          <textarea id="feedbackText" rows="5" placeholder="We'd love to hear from you..." required aria-required="true"></textarea>
+          <button type="submit" class="btn btn-primary" style="margin-top:.5rem">Send Feedback</button>
+        </form>
+        <p id="feedbackMsg" class="feedback-success" hidden>Thank you for your feedback! 🌸</p>
+      </div>
+
+    </section>
+
+    <!-- SOCIAL MEDIA — real brand SVG icons -->
+    <section class="social-media" aria-labelledby="social-heading">
+      <h2 id="social-heading">Follow Us</h2>
+      <div class="social-links">
+
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+          <!-- Official Facebook icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#1877F2" role="img" aria-hidden="true">
+            <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
+          </svg>
+          <span>Facebook</span>
+        </a>
+
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+          <!-- Official Instagram gradient icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" role="img" aria-hidden="true">
+            <defs>
+              <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="5%" stop-color="#fdf497"/>
+                <stop offset="45%" stop-color="#fd5949"/>
+                <stop offset="60%" stop-color="#d6249f"/>
+                <stop offset="90%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <path fill="url(#ig-grad)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (Twitter)">
+          <!-- Official X/Twitter icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="#000" role="img" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          <span>X (Twitter)</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <nav aria-label="Footer navigation">
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/signuporlogin.html">Sign In</a>
+      </nav>
+      <p>&copy; 2024 XX Flower Shop. All rights reserved.</p>
+      <a href="pages/signuporlogin.html" class="footer-signup">Sign up for discounts</a>
+    </div>
+  </footer>
+
+  <script src="js/base.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher's Day Flowers — XX Flower Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/fourflowercategories.css">
+  
+</head>
+<body>
+    <header>
+      <nav aria-label="Main navigation">
+        <a href="../index.html" aria-label="Home"><img src="../images/logo.webp" alt="XX Flower Shop" class="logo"></a>
+        <div class="search-bar" role="search">
+          <input type="text" id="searchInput" placeholder="Search flowers..." aria-label="Search" autocomplete="off">
+          <button onclick="handleSearch()">Search</button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Flower Catalogue <span class="arrow" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-content" role="menu">
+            <li><a href="fathersdayflower.html" role="menuitem">Father's Day</a></li>
+            <li><a href="mothersdayflower.html" role="menuitem">Mother's Day</a></li>
+            <li><a href="valentinesdayflower.html" role="menuitem">Valentine's Day</a></li>
+            <li><a href="birthdayflower.html" role="menuitem">Birthday</a></li>
+            <li><a href="teachersdayflower.html" role="menuitem">Teacher's Day</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <main>
+
+    <div class="cat-wrap">
+      <h1>Teacher's Day Flowers</h1>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <a href="whiteroses.html">
+            <div class="cat-card-img">
+              <img src="../images/white-roses-1.jpg" data-hover="../images/white-roses-hover.webp" alt="White roses">
+            </div>
+          </a>
+          <div class="cat-card-info">
+            <h2><a href="whiteroses.html">White Roses</a></h2>
+            <p class="cat-price">RM 69.00 <span style="color:var(--muted);font-size:.8rem">· RM 129.00 premium</span></p>
+          </div>
+        </div>
+<div class="cat-card">
+          <a href="sparklelilies.html">
+            <div class="cat-card-img">
+              <img src="../images/sparkle-lily-1.webp" data-hover="../images/sparkle-lily-hover.webp" alt="Sparkle lilies">
+            </div>
+          </a>
+          <div class="cat-card-info">
+            <h2><a href="sparklelilies.html">Sparkle Lilies</a></h2>
+            <p class="cat-price">RM 79.00 <span style="color:var(--muted);font-size:.8rem">· RM 159.00 premium</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    <footer>
+      <div class="footer-inner">
+        <nav aria-label="Footer">
+          <a href="contact.html">Contact</a>
+          <a href="signuporlogin.html">Sign In</a>
+        </nav>
+        <p>&copy; 2024 XX Flower Shop. All rights reserved.</p>
+        <a href="signuporlogin.html" class="footer-signup">Sign up for discounts</a>
+      </div>
+    </footer>
+    <script src="../js/base.js"></script>
+    <script src="../js/fourflowercategories.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In / Sign Up — XX Flower Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/signuporlogin.css">
+  
+</head>
+<body>
+    <header>
+      <nav aria-label="Main navigation">
+        <a href="../index.html" aria-label="Home"><img src="../images/logo.webp" alt="XX Flower Shop" class="logo"></a>
+        <div class="search-bar" role="search">
+          <input type="text" id="searchInput" placeholder="Search flowers..." aria-label="Search" autocomplete="off">
+          <button onclick="handleSearch()">Search</button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Flower Catalogue <span class="arrow" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-content" role="menu">
+            <li><a href="fathersdayflower.html" role="menuitem">Father's Day</a></li>
+            <li><a href="mothersdayflower.html" role="menuitem">Mother's Day</a></li>
+            <li><a href="valentinesdayflower.html" role="menuitem">Valentine's Day</a></li>
+            <li><a href="birthdayflower.html" role="menuitem">Birthday</a></li>
+            <li><a href="teachersdayflower.html" role="menuitem">Teacher's Day</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <main>
+
+    <div class="auth-wrap">
+      <div class="auth-box">
+        <div class="auth-panel">
+          <div class="auth-tabs">
+            <button class="auth-tab active" onclick="showTab('signin')">Sign In</button>
+            <button class="auth-tab" onclick="showTab('signup')">Create Account</button>
+          </div>
+          <form id="signinForm" class="auth-form active" novalidate>
+            <h1>Welcome back</h1>
+            <p>Sign in to access your account and exclusive offers.</p>
+            <input class="auth-input" type="email" id="signInEmail" placeholder="Email address" required>
+            <input class="auth-input" type="password" id="signInPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary" style="width:100%">Sign In</button>
+          </form>
+          <form id="signupForm" class="auth-form" novalidate>
+            <h1>Create account</h1>
+            <p>Join us and get exclusive member discounts.</p>
+            <input class="auth-input" type="text" id="signUpName" placeholder="Full name" required>
+            <input class="auth-input" type="email" id="signUpEmail" placeholder="Email address" required>
+            <input class="auth-input" type="password" id="signUpPassword" placeholder="Password" required>
+            <button type="submit" class="btn btn-primary" style="width:100%">Create Account</button>
+          </form>
+        </div>
+        <div class="auth-accent">
+          <h2>XX Flower Shop</h2>
+          <p>Fresh bouquets for every occasion — delivered to your door across Malaysia.</p>
+          <img src="../images/red-roses-1.webp" alt="Flowers" style="width:100%;border-radius:10px;margin-top:.5rem">
+        </div>
+      </div>
+    </div>
+  </main>
+    <footer>
+      <div class="footer-inner">
+        <nav aria-label="Footer">
+          <a href="contact.html">Contact</a>
+          <a href="signuporlogin.html">Sign In</a>
+        </nav>
+        <p>&copy; 2024 XX Flower Shop. All rights reserved.</p>
+        <a href="signuporlogin.html" class="footer-signup">Sign up for discounts</a>
+      </div>
+    </footer>
+    <script src="../js/base.js"></script>
+    <script src="../js/signuporlogin.js"></script>
+</body>
+</html>

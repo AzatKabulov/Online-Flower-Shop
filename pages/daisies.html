@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daisies Bouquet — XX Flower Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/flower.css">
+  
+</head>
+<body>
+    <header>
+      <nav aria-label="Main navigation">
+        <a href="../index.html" aria-label="Home"><img src="../images/logo.webp" alt="XX Flower Shop" class="logo"></a>
+        <div class="search-bar" role="search">
+          <input type="text" id="searchInput" placeholder="Search flowers..." aria-label="Search" autocomplete="off">
+          <button onclick="handleSearch()">Search</button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Flower Catalogue <span class="arrow" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-content" role="menu">
+            <li><a href="fathersdayflower.html" role="menuitem">Father's Day</a></li>
+            <li><a href="mothersdayflower.html" role="menuitem">Mother's Day</a></li>
+            <li><a href="valentinesdayflower.html" role="menuitem">Valentine's Day</a></li>
+            <li><a href="birthdayflower.html" role="menuitem">Birthday</a></li>
+            <li><a href="teachersdayflower.html" role="menuitem">Teacher's Day</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <main>
+
+    <div class="product-wrap">
+      <div class="product-layout">
+        <div class="img-col">
+          <img class="main-image" src="../images/daisy-1.jpg" alt="Daisies bouquet" id="mainImage">
+          <div class="img-nav">
+            <button class="nav-btn prev" onclick="prevImage()">&#8249;</button>
+            <button class="nav-btn next" onclick="nextImage()">&#8250;</button>
+          </div>
+          <input type="hidden" id="image0" value="../images/daisy-1.jpg">
+          <input type="hidden" id="image1" value="../images/daisy-hover.jpg">
+          <input type="hidden" id="image2" value="../images/daisy-extra.jpg">
+        </div>
+        <div class="details-col">
+          <h1>Daisies Bouquet</h1>
+          <div class="stars">★★★★★ <span>(40 reviews)</span></div>
+          <div class="price-row">
+            <div class="old-price">RM 289.00</div>
+            <div class="current-price" id="price" data-standard-price="RM 110.00" data-premium-price="RM 168.00">RM 110.00</div>
+          </div>
+          <span class="badge-available">Available Nationwide</span>
+          <div class="size-label">Choose a size</div>
+          <div class="size-toggle">
+            <input type="radio" id="standard" name="size" value="standard" checked onclick="updatePrice()">
+            <label for="standard" class="size-opt">Standard</label>
+            <input type="radio" id="premium" name="size" value="premium" onclick="updatePrice()">
+            <label for="premium" class="size-opt">Premium</label>
+          </div>
+          <div class="desc">
+            <div class="short active">Daisies are flowering plants in the aster family with a composite flower head...</div>
+            <div class="full">Daisies are flowering plants in the aster family (Asteraceae) with a composite flower head consisting of bright yellow disk flowers surrounded by white ray petals.
+              <div class="details-grid">
+                <div class="detail-item"><strong>Size</strong><span>Std: 35×30 cm · Prem: 35×35 cm</span></div>
+                <div class="detail-item"><strong>Blooms (std)</strong><span>7 stalks of Daisies</span></div>
+                <div class="detail-item"><strong>Perfect for</strong><span>Mother's Day</span></div>
+                <div class="detail-item"><strong>Blooms (prem)</strong><span>10 stalks of Daisies</span></div>
+                <div class="detail-item"><strong>Comes with</strong><span>Free message card</span></div>
+              </div>
+            </div>
+            <button class="show-more-btn" onclick="toggleDesc()">Show more</button>
+          </div>
+          <div class="qty-row">
+            <span class="qty-label">Qty</span>
+            <div class="qty-ctrl">
+              <button class="qty-btn" onclick="changeQty(-1)">−</button>
+              <input class="qty-input" type="number" id="quantity" value="1" min="1">
+              <button class="qty-btn" onclick="changeQty(1)">+</button>
+            </div>
+          </div>
+          <button class="buy-btn" onclick="buyNow()">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <h2>Customer Reviews</h2>
+        <div class="review-summary">
+          <div class="review-score">
+            <div class="score-big">4.8</div>
+            <div class="stars">★★★★★</div>
+            <div style="font-size:.82rem;color:var(--muted)">40 reviews</div>
+          </div>
+          <div class="review-bars">
+            <div class="review-bar"><span>5★</span><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><span class="bar-count">33</span></div>
+            <div class="review-bar"><span>4★</span><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div><span class="bar-count">7</span></div>
+            <div class="review-bar"><span>3★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+            <div class="review-bar"><span>2★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+            <div class="review-bar"><span>1★</span><div class="bar-track"><div class="bar-fill" style="width:0%"></div></div><span class="bar-count">0</span></div>
+          </div>
+        </div>
+
+          <div class="reviews-list">
+            <div class="review-card">
+              <div class="rc-header"><span class="rc-stars">★★★★★</span><span class="rc-date">26/03/2023</span></div>
+              <div class="rc-reviewer"><img src="../images/extra-3.jpg" alt=""><span class="rc-name">Dalila A.</span><span class="rc-verified">Verified</span></div>
+              <p class="rc-title">Efficiency of logistics</p>
+              <p class="rc-body">Fresh flowers, arrived on time and beautifully packaged.</p>
+            </div>
+            <div class="review-card">
+              <div class="rc-header"><span class="rc-stars">★★★★★</span><span class="rc-date">06/02/2023</span></div>
+              <div class="rc-reviewer"><img src="../images/extra-4.jpeg" alt=""><span class="rc-name">Cheryl C.</span></div>
+              <p class="rc-title">Quality of products</p>
+              <p class="rc-body">Great service, fast delivery and the bouquet is exactly as pictured.</p>
+            </div>
+            <div class="review-card">
+              <div class="rc-header"><span class="rc-stars">★★★★☆</span><span class="rc-date">24/01/2023</span></div>
+              <div class="rc-reviewer"><img src="../images/hand-bouquet.png" alt=""><span class="rc-name">Sumathi S.K.</span><span class="rc-verified">Verified</span></div>
+              <p class="rc-title">Ordering experience</p>
+              <p class="rc-body">Satisfied with the overall process. Will order again.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </main>
+    <footer>
+      <div class="footer-inner">
+        <nav aria-label="Footer">
+          <a href="contact.html">Contact</a>
+          <a href="signuporlogin.html">Sign In</a>
+        </nav>
+        <p>&copy; 2024 XX Flower Shop. All rights reserved.</p>
+        <a href="signuporlogin.html" class="footer-signup">Sign up for discounts</a>
+      </div>
+    </footer>
+    <script src="../js/base.js"></script>
+    <script src="../js/flower.js"></script>
+</body>
+</html>

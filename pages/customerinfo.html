@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — XX Flower Shop</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/customerinfo.css">
+  
+</head>
+<body>
+    <header>
+      <nav aria-label="Main navigation">
+        <a href="../index.html" aria-label="Home"><img src="../images/logo.webp" alt="XX Flower Shop" class="logo"></a>
+        <div class="search-bar" role="search">
+          <input type="text" id="searchInput" placeholder="Search flowers..." aria-label="Search" autocomplete="off">
+          <button onclick="handleSearch()">Search</button>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Flower Catalogue <span class="arrow" aria-hidden="true">▾</span></button>
+          <ul class="dropdown-content" role="menu">
+            <li><a href="fathersdayflower.html" role="menuitem">Father's Day</a></li>
+            <li><a href="mothersdayflower.html" role="menuitem">Mother's Day</a></li>
+            <li><a href="valentinesdayflower.html" role="menuitem">Valentine's Day</a></li>
+            <li><a href="birthdayflower.html" role="menuitem">Birthday</a></li>
+            <li><a href="teachersdayflower.html" role="menuitem">Teacher's Day</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  <main>
+
+    <div class="page-wrap">
+      <h1 class="page-title">Checkout</h1>
+      <div class="checkout-grid">
+        <div class="checkout-card">
+          <h2>Delivery Details</h2>
+          <form id="customerForm" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Recipient's full name" required>
+              <p class="error-msg" id="nameError"></p>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+60 12-3456 7890" required>
+              <p class="error-msg" id="phoneError"></p>
+            </div>
+            <div class="form-group">
+              <label for="address">Delivery Address</label>
+              <input type="text" id="address" placeholder="Street address" required>
+              <p class="error-msg" id="addressError"></p>
+            </div>
+            <div class="form-group">
+              <label for="postcode">Postcode</label>
+              <input type="text" id="postcode" placeholder="50000" maxlength="5" required>
+              <p class="error-msg" id="postcodeError"></p>
+            </div>
+            <div class="form-group">
+              <label for="senderName">Sender's Name</label>
+              <input type="text" id="senderName" placeholder="Your name (for card)" required>
+              <p class="error-msg" id="senderNameError"></p>
+            </div>
+            <div class="form-group">
+              <label for="cardMessage">Card Message <span style="font-weight:400;text-transform:none">(optional)</span></label>
+              <textarea id="cardMessage" placeholder="Write a personal message..." oninput="updateCharCount()"></textarea>
+              <p class="char-count" id="charCount">0 / 50</p>
+              <p class="error-msg" id="cardMessageError"></p>
+            </div>
+            <h2 style="margin-top:1.5rem">Payment Method</h2>
+            <div class="form-group">
+              <div class="payment-opts">
+                <div class="payment-opt" onclick="selectPayment('credit-card',this)">
+                  <img src="../images/creditdebitcard.webp" alt="Credit / Debit Card">
+                  <span>Card</span>
+                </div>
+                <div class="payment-opt" onclick="selectPayment('online-banking',this)">
+                  <img src="../images/onlinebanking.webp" alt="Online Banking">
+                  <span>Online Banking</span>
+                </div>
+                <div class="payment-opt" onclick="selectPayment('touch-n-go',this)">
+                  <img src="../images/tng-icon.webp" alt="Touch 'n Go">
+                  <span>Touch 'n Go</span>
+                </div>
+              </div>
+              <input type="hidden" id="selectedPayment">
+              <p class="error-msg" id="paymentError"></p>
+            </div>
+            <button type="submit" class="submit-btn">Place Order</button>
+          </form>
+        </div>
+        <div class="checkout-card">
+          <h2>Order Summary</h2>
+          <div class="summary-row"><span>Subtotal</span><span>RM —</span></div>
+          <div class="summary-row"><span>Delivery</span><span>Free</span></div>
+          <hr class="summary-divider">
+          <div class="summary-row summary-total"><span>Total</span><span>RM —</span></div>
+          <p style="font-size:.8rem;color:var(--muted);margin-top:1rem;line-height:1.6">Flowers are hand-delivered within 3 days of order. Free message card included.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+    <footer>
+      <div class="footer-inner">
+        <nav aria-label="Footer">
+          <a href="contact.html">Contact</a>
+          <a href="signuporlogin.html">Sign In</a>
+        </nav>
+        <p>&copy; 2024 XX Flower Shop. All rights reserved.</p>
+        <a href="signuporlogin.html" class="footer-signup">Sign up for discounts</a>
+      </div>
+    </footer>
+    <script src="../js/base.js"></script>
+    <script src="../js/customerinfo.js"></script>
+</body>
+</html>
