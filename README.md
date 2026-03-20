@@ -108,5 +108,7 @@ Homepage
 ---
 
 ## 📸 Screenshots
-
+![Homepage](screenshots/homepage.png)
+![Product Page](screenshots/product.png)
+![Checkout Page](screenshots/checkout.png)
 > 
